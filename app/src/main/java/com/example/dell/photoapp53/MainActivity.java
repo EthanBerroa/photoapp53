@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        user= new User();
+
         loadData();
         Log.d(TAG, "current album number = " + user.getAlbums().size());
         GridView gridview = (GridView) findViewById(R.id.album_list);
@@ -49,6 +51,12 @@ public class MainActivity extends AppCompatActivity{
                                         int position, long id) {
 
                     //stuff
+                    saveData();
+                    currentAlbum = position;
+                   // Log.d(TAG, "current album number = " + user.getAlbums().size());
+                    Intent intent = new Intent(MainActivity.this, AlbumScreen.class);
+                    intent.addCategory(Intent.CATEGORY_OPENABLE);
+                    startActivity(intent);
                 }
             });
         }

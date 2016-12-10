@@ -66,6 +66,15 @@ public class Album implements java.io.Serializable{
         this.photos.add(photo);
     }
 
+    public void deletePhoto(Photo photo)
+    {
+        for(int i = 0; i < this.photos.size(); i++)
+        {
+            if(photos.get(i).equals(photo))
+                photos.remove(i);
+        }
+    }
+
     /**
      * Returns the entire arraylist of photos in this album.
      * @return

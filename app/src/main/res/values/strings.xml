@@ -2,4 +2,8 @@
     <string name="app_name">photoapp53</string>
     <string name="delete">delete</string>
     <string name="rename">rename</string>
+    <string name="delete_photo"> delete</string>
+    <string name="move_photo"> move photo </string>
+    <string name="form_pick_photos">pick photos</string>
+    />
 </resources>

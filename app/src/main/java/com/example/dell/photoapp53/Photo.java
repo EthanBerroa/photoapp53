@@ -15,18 +15,18 @@ public class Photo implements java.io.Serializable{
 
     //private BufferedImage img;
     //private Calendar calendar;
-    private String URI;
+    private Uri URI;
     private static final long serialVersionUID = 2L;
 
     public ArrayList<Tag> tags;
 
     public Photo(Uri uri){
-        this.URI = uri.toString();
+        this.URI = uri;
         this.tags = new ArrayList<Tag>();
     }
 
 
-    public String getURI() {
+    public Uri getURI() {
         // TODO Auto-generated method stub
         return this.URI;
     }
@@ -84,15 +84,15 @@ public class Photo implements java.io.Serializable{
     }
 
 
-    public void setURI(String URI){
+    /*public void setURI(String URI){
         this.URI = URI;
-    }
+    }*/
 
 
     private void readObject(java.io.ObjectInputStream stream)
             throws IOException, ClassNotFoundException
     {
-        URI = (String) stream.readObject();
+        URI = (Uri) stream.readObject();
 
 
         tags = (ArrayList<Tag>)stream.readObject();
