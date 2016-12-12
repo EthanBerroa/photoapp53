@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 
 //tsdfss
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements java.io.Serializable{
 
     private static final String TAG = MainActivity.class.getSimpleName();
     public static User user;
@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity{
         user= new User();
 
         loadData();
+
+        if(user.albums.contains(new Album("RESULT7")))
+            user.albums.remove("RESULT7");
+
         Log.d(TAG, "current album number = " + user.getAlbums().size());
         GridView gridview = (GridView) findViewById(R.id.album_list);
         if (user.getAlbums().size() != 0){
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
                     //stuff
                     saveData();
                     currentAlbum = position;
-                   // Log.d(TAG, "current album number = " + user.getAlbums().size());
+                    Log.d(TAG, "current album number = " + user.getAlbums().size());
                     Intent intent = new Intent(MainActivity.this, AlbumScreen.class);
                     intent.addCategory(Intent.CATEGORY_OPENABLE);
                     startActivity(intent);
@@ -81,6 +85,10 @@ public class MainActivity extends AppCompatActivity{
         TextView search = (TextView)findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                saveData();
+                Intent intent = new Intent(MainActivity.this, Search.class);
+                startActivity(intent);
+
             }
         });
     }

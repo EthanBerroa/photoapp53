@@ -5,5 +5,11 @@
     <string name="delete_photo"> delete</string>
     <string name="move_photo"> move photo </string>
     <string name="form_pick_photos">pick photos</string>
+
+
+    <string-array name="tag_types">
+        <item>Name</item>
+        <item>Location</item>
+    </string-array>
     />
 </resources>

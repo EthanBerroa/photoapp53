@@ -5,6 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+    <!--  Title bar -->
+    <!--
+    -->
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -22,7 +26,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:text="Rename Album"
+            android:text="Search by Tag"
             android:id="@+id/textView2"
             android:layout_weight="1"
             android:background="#44DCBE"
@@ -49,8 +53,19 @@
 
 
 
+        <!--  Song name label -->
+
+        <!-- Song name field -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter one or more tags with spaces between"
+            android:id="@+id/textView5"
+            android:textColor="#000000" />
+
         <EditText
-            android:id="@+id/album_name"
+            android:id="@+id/tags"
             android:layout_width="match_parent"
             android:background="@android:drawable/editbox_background"
 
@@ -67,16 +82,16 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cancel"
-                android:layout_gravity="right|center_vertical"
-                android:text="Cancel" />
+                android:id="@+id/search"
+                android:layout_gravity="center"
+                android:text="Search" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/save"
-                android:layout_gravity="left|center_vertical"
-                android:text="Save" />
+                android:id="@+id/cancel"
+                android:layout_gravity="right|center_vertical"
+                android:text="Cancel" />
         </FrameLayout>
 
 

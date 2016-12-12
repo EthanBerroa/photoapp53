@@ -20,6 +20,8 @@
 
         <activity android:name=".RenameScreen"></activity>
 
+        <activity android:name=".PhotoScreen"></activity>
+
         <activity
             android:name=".AlbumScreen"
             android:parentActivityName=".MainActivity"
@@ -29,6 +31,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity android:name=".MovePhotoScreen"></activity>
+
+        <activity android:name=".EditTags"></activity>
+
+        <activity android:name=".Search"></activity>
+        <activity android:name=".Results"></activity>
     </application>
 
 </manifest>

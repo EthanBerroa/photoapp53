@@ -84,6 +84,12 @@ public class Album implements java.io.Serializable{
         return photos;
     }
 
+    public String toString()
+    {
+        return this.name;
+    }
+
+
     /**
      * Serialization, writes data.
      * @param stream

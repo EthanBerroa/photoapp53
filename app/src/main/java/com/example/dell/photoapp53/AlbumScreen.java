@@ -3,39 +3,31 @@ package com.example.dell.photoapp53;
 /**
  * Created by Dell on 12/10/2016.
  */
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.ListMenuItemView;
 import android.view.ContextMenu;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class AlbumScreen extends AppCompatActivity {
+public class AlbumScreen extends AppCompatActivity implements java.io.Serializable{
 
     private static final int FILE_SELECT_CODE = 0;
     private static final String TAG = AlbumScreen.class.getSimpleName();
@@ -62,10 +54,10 @@ public class AlbumScreen extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View v,
                                         int position, long id) {
 
-                    //currentPhoto = position;
-                    //saveData();
-                    //Intent intent = new Intent(AlbumScreen.this, PhotoScreen.class);
-                    //startActivity(intent);
+                    currentPhoto = position;
+                    saveData();
+                    Intent intent = new Intent(AlbumScreen.this, PhotoScreen.class);
+                    startActivity(intent);
                 }
             });
         }
@@ -111,16 +103,16 @@ public class AlbumScreen extends AppCompatActivity {
                 MenuInflater inflater = getMenuInflater();
                 if(MainActivity.user.getAlbums().size() == 1)
                 {
-                    Toast.makeText(AlbumScreen.this, "There is only one album, and you are in it!" ,
+                    Toast.makeText(AlbumScreen.this, "No other albums to move to!" ,
                             Toast.LENGTH_SHORT).show();
 
                 }
                 else
                 {
-                    //saveData();
-                    //intent = new Intent(AlbumScreen.this, MovePhoto.class);
-                   // finish();
-                   // startActivity(intent);
+                    saveData();
+                    intent = new Intent(AlbumScreen.this, MovePhotoScreen.class);
+                    finish();
+                    startActivity(intent);
                 }
 
                 //inflater.inflate(R.menu.choices_menu, ContextMenu menu);
@@ -164,6 +156,8 @@ public class AlbumScreen extends AppCompatActivity {
             }
 
         }
+
+        //saveData();
         Intent intent = new Intent(AlbumScreen.this, AlbumScreen.class);
         finish();
         startActivity(intent);
