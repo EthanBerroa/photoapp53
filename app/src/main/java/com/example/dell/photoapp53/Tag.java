@@ -21,7 +21,7 @@ public class Tag implements java.io.Serializable
 {
     private String type;
     private String value;
-    //public ArrayList<Photo> photos;
+
 
     /**
      * Empty constructor.

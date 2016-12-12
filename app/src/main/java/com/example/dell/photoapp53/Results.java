@@ -1,8 +1,6 @@
 package com.example.dell.photoapp53;
 
-/**
- * Created by Dell on 12/11/2016.
- */
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -49,16 +47,14 @@ public class Results extends AppCompatActivity {
         loadData();
 
         GridView gridview = (GridView) findViewById(R.id.photo_list);
-        //Log.d(TAG, "current album SIZE = " + MainActivity.user.getAlbums().get(MainActivity.currentAlbum).getPhotos().size());
+
         if (MainActivity.results.size() > 0){
             gridview.setAdapter(new AlbumGridAdapter(this));
             registerForContextMenu(gridview);
             gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v,
                                         int position, long id) {
-                    //position++;
-                    //Toast.makeText(AlbumScreen.this, "" + position,
-                    //Toast.LENGTH_SHORT).show();
+
                     currentPhoto = position;
                     saveData();
                     Intent intent = new Intent(Results.this, PhotoScreen.class);

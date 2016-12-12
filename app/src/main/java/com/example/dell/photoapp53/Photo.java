@@ -13,8 +13,6 @@ import java.util.Calendar;
 
 public class Photo implements java.io.Serializable{
 
-    //private BufferedImage img;
-    //private Calendar calendar;
     private String URI;
     private static final long serialVersionUID = 2L;
 
@@ -77,24 +75,15 @@ public class Photo implements java.io.Serializable{
             throws IOException
     {
         stream.writeObject(URI);
-
-
         stream.writeObject(tags);
 
     }
-
-
-    /*public void setURI(String URI){
-        this.URI = URI;
-    }*/
 
 
     private void readObject(java.io.ObjectInputStream stream)
             throws IOException, ClassNotFoundException
     {
         URI = (String) stream.readObject();
-
-
         tags = (ArrayList<Tag>)stream.readObject();
     }
 

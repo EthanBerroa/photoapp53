@@ -20,11 +20,9 @@ public class GridAdapter extends BaseAdapter {
     public GridAdapter(Context c) {
         mContext = c;
     }
-
     public int getCount() {
         return albumNum;
     }
-
     public Object getItem(int position) {
         return null;
     }
@@ -33,11 +31,10 @@ public class GridAdapter extends BaseAdapter {
         return 0;
     }
 
-    // create a new ImageView for each item referenced by the Adapter
+
     public View getView(int position, View convertView, ViewGroup parent) {
         View comboView;
         if (convertView == null) {
-            // if it's not recycled, initialize some attributes
             LayoutInflater li = LayoutInflater.from(mContext);
             comboView = new View(mContext);
             comboView = li.inflate(R.layout.grid, null);
@@ -52,6 +49,6 @@ public class GridAdapter extends BaseAdapter {
         return comboView;
 
     }
-    // references to our images
+
     private int albumNum = MainActivity.user.getAlbums().size();
 }

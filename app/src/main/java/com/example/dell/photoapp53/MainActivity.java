@@ -23,7 +23,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-//tsdfss
 public class MainActivity extends AppCompatActivity implements java.io.Serializable{
 
     private static final String TAG = MainActivity.class.getSimpleName();

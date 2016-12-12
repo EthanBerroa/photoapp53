@@ -1,8 +1,6 @@
 package com.example.dell.photoapp53;
 
-/**
- * Created by Dell on 12/11/2016.
- */
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,10 +33,10 @@ public class Search extends AppCompatActivity {
         final EditText tags = (EditText)findViewById(R.id.tags);
 
         Button search = (Button)findViewById(R.id.search);
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Search and creates list of photos with matching tags)
                 ArrayList<Photo> photos = new ArrayList<Photo>();
                 String text = tags.getText().toString();
                 if (text.length() > 0){
@@ -62,13 +60,13 @@ public class Search extends AppCompatActivity {
                         }
                     }
                 }
+
                 MainActivity.results = photos;
                 Album resultalbum = new Album("RESULT7");
                 resultalbum.photos=photos;
                 MainActivity.user.albums.add(resultalbum);
-                //MainActivity.user.getAlbum("test").photos=photos;
+
                 MainActivity.user.setCurrentAlbum(MainActivity.user.albums.indexOf(resultalbum));
-               // Log.d(TAG, "current album number = " + MainActivity.currentAlbum);
                 MainActivity.currentAlbum=MainActivity.user.currentAlbumIndex;
                 saveData();
                 Intent intent = new Intent(Search.this,Results.class);
@@ -82,7 +80,6 @@ public class Search extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //save and exit
                 saveData();
                 Intent intent = new Intent(Search.this, MainActivity.class);
                 finish();

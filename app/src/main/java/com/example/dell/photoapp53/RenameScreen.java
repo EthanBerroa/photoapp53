@@ -28,11 +28,10 @@ public class RenameScreen extends AppCompatActivity {
         final EditText album_name = (EditText)findViewById(R.id.album_name);
 
         Button save = (Button)findViewById(R.id.save);
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Rename album and save
-
                 String input = album_name.getText().toString();
                 boolean exists = false;
                 for (int i = 0; i < MainActivity.user.getAlbums().size(); i++){
@@ -55,16 +54,16 @@ public class RenameScreen extends AppCompatActivity {
         });
 
         Button cancel = (Button)findViewById(R.id.cancel);
+
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //save and exit
                 saveData();
                 Intent intent = new Intent(RenameScreen.this, MainActivity.class);
                 startActivity(intent);
-
             }
         });
+
     }
 
     private void loadData(){

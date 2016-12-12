@@ -25,7 +25,6 @@ import java.util.ArrayList;
 
 public class MovePhotoScreen extends AppCompatActivity{
 
-        //Array of Albums
         ArrayList<Album> albums = MainActivity.user.getAlbums();
         ListView listView;
         Album previousAlbum = MainActivity.user.getAlbums().get(MainActivity.currentAlbum);
@@ -43,7 +42,7 @@ public class MovePhotoScreen extends AppCompatActivity{
             listView = (ListView) findViewById(R.id.album_move_list);
 
 
-            //listView.getChildAt(albumsIndex).setVisibility(View.GONE);
+
             listView.setAdapter(adapter);
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

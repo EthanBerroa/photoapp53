@@ -41,7 +41,7 @@ public class AlbumScreen extends AppCompatActivity implements java.io.Serializab
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.album_screen);
-        Log.d(TAG, "AlbumView onCreate ENTERED!!!!");
+        Log.d(TAG, "AlbumView onCreate");
 
         loadData();
 
@@ -69,7 +69,6 @@ public class AlbumScreen extends AppCompatActivity implements java.io.Serializab
 
 
         TextView addPhoto = (TextView)findViewById(R.id.add_photos);
-
         addPhoto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 chooseFileBox();
@@ -107,15 +106,12 @@ public class AlbumScreen extends AppCompatActivity implements java.io.Serializab
                             Toast.LENGTH_SHORT).show();
 
                 }
-                else
-                {
+                else {
                     saveData();
                     intent = new Intent(AlbumScreen.this, MovePhotoScreen.class);
                     finish();
                     startActivity(intent);
                 }
-
-                //inflater.inflate(R.menu.choices_menu, ContextMenu menu);
             default:
                 return super.onContextItemSelected(item);
         }
@@ -157,7 +153,6 @@ public class AlbumScreen extends AppCompatActivity implements java.io.Serializab
 
         }
 
-        //saveData();
         Intent intent = new Intent(AlbumScreen.this, AlbumScreen.class);
         finish();
         startActivity(intent);
@@ -175,9 +170,8 @@ public class AlbumScreen extends AppCompatActivity implements java.io.Serializab
             e.printStackTrace();
         }
     }
+
     private void saveData(){
-
-
         try {
             FileOutputStream fos = openFileOutput(MainActivity.saveFile, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
