@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -62,7 +63,6 @@ public class PhotoScreen extends AppCompatActivity {
 
             tags.setText(output);
         }
-
 
         TextView edit = (TextView)findViewById(R.id.edit);
         edit.setOnClickListener(new View.OnClickListener() {

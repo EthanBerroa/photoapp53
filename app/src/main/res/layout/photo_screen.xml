@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -11,32 +13,33 @@
         android:layout_gravity="center_horizontal"
         android:weightSum="3">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:id="@+id/back"
-            android:layout_weight="1"
-            android:background="#44DCBE" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/back"
+            android:background="#44DCBE"
+            android:layout_gravity="center"
+             />
+
+        <TextView
+            android:layout_width="90dp"
             android:layout_height="fill_parent"
             android:text="Photo View"
             android:id="@+id/textView2"
-            android:layout_weight="1"
+            android:layout_weight="3.04"
             android:background="#44DCBE"
             android:textColor="#ffffff"
             android:textAlignment="center"
             android:textSize="20dp" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
             android:id="@+id/edit"
-            android:layout_weight="1"
             android:background="#44DCBE"
-            android:drawableRight="@mipmap/ic_edit"
-            />
+            android:drawableRight="@mipmap/ic_edit" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -51,6 +54,8 @@
             android:id="@+id/currentImage"
             android:layout_weight="18"
             android:scaleType = "centerInside" />
+
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -94,5 +99,7 @@
                 android:src="@mipmap/ic_arrow_forward"/>
         </LinearLayout>
     </LinearLayout>
+
+
 
 </LinearLayout>

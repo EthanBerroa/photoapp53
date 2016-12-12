@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ import java.util.ArrayList;
  * Created by Dell on 12/11/2016.
  */
 public class Search extends AppCompatActivity {
+
+    private static final String TAG = Search.class.getSimpleName();
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -65,6 +68,8 @@ public class Search extends AppCompatActivity {
                 MainActivity.user.albums.add(resultalbum);
                 //MainActivity.user.getAlbum("test").photos=photos;
                 MainActivity.user.setCurrentAlbum(MainActivity.user.albums.indexOf(resultalbum));
+               // Log.d(TAG, "current album number = " + MainActivity.currentAlbum);
+                MainActivity.currentAlbum=MainActivity.user.currentAlbumIndex;
                 saveData();
                 Intent intent = new Intent(Search.this,Results.class);
                 finish();

@@ -43,7 +43,12 @@ public class MainActivity extends AppCompatActivity implements java.io.Serializa
         loadData();
 
         if(user.albums.contains(new Album("RESULT7")))
-            user.albums.remove("RESULT7");
+        {
+            user.deleteAlbum(user.albums.indexOf(new Album("RESULT7")));
+            saveData();
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
 
         Log.d(TAG, "current album number = " + user.getAlbums().size());
         GridView gridview = (GridView) findViewById(R.id.album_list);

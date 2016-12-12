@@ -20,7 +20,13 @@
 
         <activity android:name=".RenameScreen"></activity>
 
-        <activity android:name=".PhotoScreen"></activity>
+        <activity android:name=".PhotoScreen"
+            android:parentActivityName=".AlbumScreen"
+            android:grantUriPermissions = "true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AlbumScreen" /></activity>
 
         <activity
             android:name=".AlbumScreen"
@@ -32,12 +38,38 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".MovePhotoScreen"></activity>
+        <activity android:name=".MovePhotoScreen"
+            android:parentActivityName=".AlbumScreen"
+            android:grantUriPermissions = "true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AlbumScreen" />
+        </activity>
 
-        <activity android:name=".EditTags"></activity>
+        <activity android:name=".EditTags"
+            android:parentActivityName=".PhotoScreen"
+            android:grantUriPermissions = "true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PhotoScreen" /></activity>
 
-        <activity android:name=".Search"></activity>
-        <activity android:name=".Results"></activity>
+        <activity android:name=".Search"
+            android:parentActivityName=".MainActivity"
+            android:grantUriPermissions = "true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /></activity>
+
+        <activity android:name=".Results"
+            android:parentActivityName=".MainActivity"
+            android:grantUriPermissions = "true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /></activity>
     </application>
 
 </manifest>

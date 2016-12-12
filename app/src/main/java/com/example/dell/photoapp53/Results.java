@@ -45,6 +45,7 @@ public class Results extends AppCompatActivity {
         setContentView(R.layout.results_screen);
         Log.d(TAG, "ResultsScreen onCreate ENTERED!!!!");
 
+        Log.d(TAG, "current album number = " + MainActivity.currentAlbum);
         loadData();
 
         GridView gridview = (GridView) findViewById(R.id.photo_list);
