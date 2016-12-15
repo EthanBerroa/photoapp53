@@ -29,7 +29,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- * Created by Dell on 12/11/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 public class PhotoScreen extends AppCompatActivity {
 

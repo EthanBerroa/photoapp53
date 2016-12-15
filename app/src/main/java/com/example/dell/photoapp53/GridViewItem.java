@@ -5,7 +5,8 @@ package com.example.dell.photoapp53;
         import android.widget.ImageView;
 
 /**
- * Created by Dell on 12/8/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 public class GridViewItem extends ImageView {
 

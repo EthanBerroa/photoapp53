@@ -1,7 +1,8 @@
 package com.example.dell.photoapp53;
 
 /**
- * Created by Dell on 12/10/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 import android.content.Context;
         import android.graphics.Bitmap;

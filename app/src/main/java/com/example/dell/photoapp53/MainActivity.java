@@ -22,7 +22,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-
+/*
+* Ethan Berroa
+ * Milan Patel
+ */
 public class MainActivity extends AppCompatActivity implements java.io.Serializable{
 
     private static final String TAG = MainActivity.class.getSimpleName();

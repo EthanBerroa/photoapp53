@@ -1,7 +1,8 @@
 package com.example.dell.photoapp53;
 
 /**
- * Created by Dell on 12/10/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 import android.content.ContentResolver;
 import android.content.Context;
@@ -146,7 +147,11 @@ public class AlbumScreen extends AppCompatActivity implements java.io.Serializab
                 final int takeFlags2 = takeFlags;
                 ContentResolver resolver = AlbumScreen.this.getContentResolver();
                 resolver.takePersistableUriPermission(uri, takeFlags2);
-                MainActivity.user.getAlbums().get(MainActivity.currentAlbum).addPhoto(new Photo(uri));
+                if(!MainActivity.user.getAlbums().get(MainActivity.currentAlbum).photos.contains(new Photo(uri)))
+                {
+                    MainActivity.user.getAlbums().get(MainActivity.currentAlbum).addPhoto(new Photo(uri));
+                }
+
                 Log.d(TAG, "File Uri: " + uri.toString());
                 saveData();
             }

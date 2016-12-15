@@ -20,7 +20,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Created by Dell on 12/11/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 
 
@@ -38,22 +39,16 @@ import java.io.ObjectOutputStream;
 
             final Spinner spinner = (Spinner) findViewById(R.id.types);
             final EditText tags = (EditText)findViewById(R.id.tags);
-            // Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                     R.array.tag_types, android.R.layout.simple_spinner_item);
-            // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            // Apply the adapter to the spinner
             spinner.setAdapter(adapter);
 
-            final ListView spinner1 = (ListView) findViewById(R.id.tags_list);
-            // Create an ArrayAdapter using the string array and a default spinner layout
+            final ListView tagList1 = (ListView) findViewById(R.id.tags_list);
             ArrayAdapter<Tag> adapter1 = new ArrayAdapter<Tag>(EditTags.this, android.R.layout.simple_spinner_item, photo.tags);
-            spinner1.setAdapter(adapter);
-            // Specify the layout to use when the list of choices appears
+            tagList1.setAdapter(adapter);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            // Apply the adapter to the spinner
-            spinner1.setAdapter(adapter1);
+            tagList1.setAdapter(adapter1);
 
 
             Button add = (Button)findViewById(R.id.add);
@@ -62,11 +57,11 @@ import java.io.ObjectOutputStream;
                 public void onClick(View v) {
                     //Rename album and save
                     String type = spinner.getSelectedItem().toString();
-                    String[] input = tags.getText().toString().split(" ");
+                    String input = tags.getText().toString();//.split(" "); Made it so tags are NOT separated by space.
                     Photo photo = MainActivity.user.getAlbums().get(MainActivity.currentAlbum).getPhotos().get(AlbumScreen.currentPhoto);
 
-                    for (int i = 0; i < input.length; i++) {
-                        Tag tag = new Tag(type, input[i].toLowerCase());
+                    for (int i = 0; i < input.length(); i++) {
+                        Tag tag = new Tag(type, input.toLowerCase());
                         if (!photo.tags.contains(tag)) {
                             photo.addTag(tag);
                             Log.d(TAG, "Tag added");
@@ -82,7 +77,7 @@ import java.io.ObjectOutputStream;
             });
 
 
-            spinner1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            tagList1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
                      EditTags.currentposition= position;}});
 
@@ -90,12 +85,9 @@ import java.io.ObjectOutputStream;
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //save and exit
+
                     Photo photo = MainActivity.user.getAlbums().get(MainActivity.currentAlbum).getPhotos().get(AlbumScreen.currentPhoto);
 
-
-
-                    //Tag tag = (Tag)spinner1.getItemAtPosition(currentposition);
                     if (photo.tags.size() >= 0){
                         photo.tags.remove(currentposition);
                         Toast.makeText(EditTags.this, "Tag deleted", Toast.LENGTH_SHORT).show();
@@ -113,7 +105,7 @@ import java.io.ObjectOutputStream;
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //save and exit
+
                     saveData();
                     finish();
                     Intent intent = new Intent(EditTags.this, PhotoScreen.class);
@@ -126,7 +118,7 @@ import java.io.ObjectOutputStream;
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //save and exit
+
                     saveData();
                     finish();
                     Intent intent = new Intent(EditTags.this, PhotoScreen.class);

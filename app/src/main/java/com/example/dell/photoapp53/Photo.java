@@ -1,7 +1,8 @@
 package com.example.dell.photoapp53;
 
 /**
- * Created by Dell on 12/8/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 
 import android.net.Uri;

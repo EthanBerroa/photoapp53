@@ -25,7 +25,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Created by Dell on 12/11/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 public class Results extends AppCompatActivity {
 

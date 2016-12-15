@@ -1,7 +1,8 @@
 package com.example.dell.photoapp53;
 
 /**
- * Created by Dell on 12/8/2016.
+ * Ethan Berroa
+ * Milan Patel
  */
 
 import android.content.Context;
@@ -34,7 +35,8 @@ public class NewAlbumScreen extends AppCompatActivity {
             public void onClick(View v) {
                 //Create album and save
                 String input = album_name.getText().toString();
-                if (input.length() > 0){
+                if (input.length() > 0 && !MainActivity.user.albums.contains(new Album(input))){
+
                     MainActivity.user.addAlbum(input);
                 }
                 saveData();

@@ -1,14 +1,6 @@
 package com.example.dell.photoapp53;
 
-/**
- * Created by Dell on 12/8/2016.
- */
-
 import java.io.IOException;
-
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Tag object class. A tag is simply a "type" string (either "Location", "Name", or "Other") and a value string.
